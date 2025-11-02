@@ -1,4 +1,4 @@
 package Springboot.CadastroNinja.Ninjas;
 
-public class NinjaRepository {
+public interface NinjaRepository {
 }

@@ -1,5 +1,6 @@
 package Springboot.CadastroNinja.Missoes;
 import Springboot.CadastroNinja.Ninjas.NinjaModel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.springframework.core.NamedInheritableThreadLocal;
 
@@ -21,6 +22,7 @@ public class MissoesModel {
 
     //  @OneToMany uma missão pode ter varios ninjas
     @OneToMany(mappedBy = "missao")
+    @JsonIgnore
     private List<NinjaModel> ninjas;
 
 }
