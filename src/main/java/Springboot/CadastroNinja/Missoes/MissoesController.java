@@ -1,6 +1,4 @@
 package Springboot.CadastroNinja.Missoes;
-
-
 import org.springframework.web.bind.annotation.*;
 
 @RestController
