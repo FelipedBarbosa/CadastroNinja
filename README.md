@@ -1,33 +1,30 @@
-Sistema de Cadastro de Ninjas 
-Bem-vindo ao Sistema de Cadastro de Ninjas!
-Este projeto é uma aplicação de arquitetura em camadas desenvolvida com Spring Boot, projetada para cadastrar ninjas e suas respectivas missões. O projeto utiliza H2 como banco de dados em memória, Flyway para migrações de banco de dados e segue boas práticas de desenvolvimento de software como controle de versão com Git e hospedagem de repositório no GitHub. O projeto tambem conta com algumas aulas extras sobre banco de dados de uma maneira mais profunda
+Sistema de Cadastro de Ninjas
+
+O Sistema de Cadastro de Ninjas é uma aplicação desenvolvida em arquitetura de camadas utilizando Spring Boot. O projeto tem como objetivo cadastrar ninjas e gerenciar suas respectivas missões. Ele utiliza o banco de dados H2 em memória durante o desenvolvimento, Flyway para versionamento de migrações e adota boas práticas como controle de versão com Git e hospedagem do repositório no GitHub. Além disso, o projeto inclui conteúdos extras abordando banco de dados de forma mais aprofundada.
 
 Visão Geral do Projeto
-Este sistema foi desenvolvido para gerenciar ninjas e suas missões. Cada ninja pode ser atribuído a uma única missão, enquanto uma missão pode ser associada a vários ninjas. As principais funcionalidades incluem:
 
-Cadastro de ninjas com nome, idade, email e rank.
-Atribuição de uma missão para um ninja.
-Gerenciamento de missões e dos ninjas associados a elas.
+O sistema foi criado para gerenciar ninjas e suas missões. Cada ninja pode ser associado a apenas uma missão, enquanto uma missão pode estar vinculada a vários ninjas. As funcionalidades principais incluem o cadastro de ninjas com informações como nome, idade, email e rank, a atribuição de missões e o gerenciamento completo das missões e dos ninjas relacionados a elas.
+
 Tecnologias Utilizadas
-Spring Boot: Para criação da aplicação web e gerenciamento de dependências.
-Banco de Dados H2: Banco de dados em memória para desenvolvimento e testes.
-Flyway: Para gerenciamento de migrações do banco de dados.
-JPA (Java Persistence API): Para mapeamento objeto-relacional (ORM).
-Git: Controle de versão para gerenciamento de mudanças no código.
-GitHub: Hospedagem do repositório para controle de versão.
-Spring Data JPA: Para interação com o banco de dados.
-Maven: Para build e gerenciamento de dependências do projeto.
-Docker: Para build externo do banco de dados
-SQL: Manipulação do banco de dados
-Design do Banco de Dados
-O esquema do banco de dados segue as seguintes relações:
 
-Ninja: Contém atributos como id, nome, idade, email e rank.
-Missão: Contém atributos como id, título e descrição.
-Um Ninja pode ter apenas uma Missão, mas uma Missão pode ser atribuída a vários Ninjas.
-Configuração
-Clone o repositório: git clone https://github.com/horaciomuller/CadastroDeNinjas.git
-Navegue até o diretório do projeto: cd CadastroDeNinjas
-Construa o projeto: mvn clean install
-Execute a aplicação: mvn spring-boot:run
-Acesse a aplicação em http://localhost:8080
+O projeto utiliza Spring Boot para criação da aplicação web e gerenciamento de dependências, H2 como banco de dados em memória, Flyway para controle de migrações, JPA e Spring Data JPA para mapeamento objeto-relacional, Git e GitHub para versionamento e hospedagem do código, Maven para build e gerenciamento de dependências, Docker para execução externa do banco de dados e SQL para manipulação dos dados.
+
+Design do Banco de Dados
+
+O banco de dados segue uma estrutura simples e funcional. A entidade Ninja contém atributos como id, nome, idade, email e rank. A entidade Missão possui id, título e descrição. A relação entre as entidades é definida da seguinte forma: um ninja pode ter apenas uma missão, enquanto uma missão pode ser atribuída a vários ninjas.
+
+Configuração do Projeto
+
+Para executar o projeto localmente, siga os passos abaixo:
+
+git clone https://github.com/horaciomuller/CadastroDeNinjas.git
+
+cd CadastroDeNinjas
+
+mvn clean install
+
+mvn spring-boot:run
+
+Após a execução, a aplicação estará disponível em:
+http://localhost:8080
