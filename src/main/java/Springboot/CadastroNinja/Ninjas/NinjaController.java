@@ -24,7 +24,7 @@ public class NinjaController {
     }
 
     // Mostrar os Ninjas (READ)
-    @GetMapping ("/listar")
+    @GetMapping ("/listar")g
     public List<NinjaModel> listarNinjas(){
         return ninjaService.listarNinjas();
     }
