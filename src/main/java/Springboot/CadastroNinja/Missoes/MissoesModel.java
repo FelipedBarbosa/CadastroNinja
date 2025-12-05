@@ -2,15 +2,20 @@ package Springboot.CadastroNinja.Missoes;
 import Springboot.CadastroNinja.Ninjas.NinjaModel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import org.springframework.core.NamedInheritableThreadLocal;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import javax.xml.transform.sax.SAXResult;
 import java.util.List;
 
 @Entity
 @Table (name = "tb_missoes")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class MissoesModel {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
