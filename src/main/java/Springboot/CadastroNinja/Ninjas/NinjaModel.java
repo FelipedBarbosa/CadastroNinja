@@ -6,11 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.util.List;
-
-//Transforma uma classe em uma entidade
-// JPA = Java Persistence API
-
 @Entity
 @Table(name = "tb_cadastro")
 @Data
