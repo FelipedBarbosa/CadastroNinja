@@ -1,7 +1,4 @@
 package Springboot.CadastroNinja.Ninjas;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -31,20 +28,22 @@ public class NinjaControllerUI {
         return "redirect:ninjas/ui/listar";
     }
 
-    @PutMapping("/alterar/{id}")
+    @GetMapping("/alterar/{id}")
     public String alterarNinjaPorId(@PathVariable Long id, Model model){
-        NinjaDTO ninja = ninjaService.atualizarNinja(id);
-
+        NinjaDTO ninja = ninjaService.listarNinjasPorId(id); // ✔ pega o ninja
         if (ninja != null){
-            model.addAttribute("ninjas", ninja);
-            return "detalhesninja";
+            model.addAttribute("ninja", ninja);
+            return "detalhesninja"; // Tela de edição
         } else {
-            model.addAttribute("mensagem", "Ninja nao encontrado");
+            model.addAttribute("mensagem", "Ninja não encontrado");
             return "listarNinjas";
         }
     }
 
-
-
+    @GetMapping("/adicionar")
+    public String mostrarFormularioAdicionarNinja(Model model) {
+        model.addAttribute("ninja", new NinjaDTO());
+        return "adicionarNinja";
+    }
 
 }

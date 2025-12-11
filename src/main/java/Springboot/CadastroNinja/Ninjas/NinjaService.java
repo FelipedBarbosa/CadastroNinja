@@ -15,36 +15,31 @@ public class NinjaService {
         this.ninjaMapper = ninjaMapper;
     }
 
-    //Listar Todos os Meus Ninjas
-    public List<NinjaDTO> listarNinjas(){
-        List <NinjaModel> ninjas = ninjaRepository.findAll();
+    public List<NinjaDTO> listarNinjas() {
+        List<NinjaModel> ninjas = ninjaRepository.findAll();
         return ninjas.stream()
                 .map(ninjaMapper::map)
                 .collect(Collectors.toList());
     }
 
-    // Listar todos os meus ninjas por ID
-    public NinjaDTO listarNinjasPorId(Long id){
+    public NinjaDTO listarNinjasPorId(Long id) {
         Optional<NinjaModel> ninjaPorId = ninjaRepository.findById(id);
         return ninjaPorId.map(ninjaMapper::map).orElse(null);
     }
 
-    // Criar um Novo Ninja
-    public NinjaDTO criarNinja(NinjaDTO ninjaDTO){
-    NinjaModel ninja = ninjaMapper.map(ninjaDTO);
-    ninja = ninjaRepository.save(ninja);
-    return ninjaMapper.map(ninja);
+    public NinjaDTO criarNinja(NinjaDTO ninjaDTO) {
+        NinjaModel ninja = ninjaMapper.map(ninjaDTO);
+        ninja = ninjaRepository.save(ninja);
+        return ninjaMapper.map(ninja);
     }
 
-    // Deletar - Tem que ser um metodo void
-    public void deletarNinjaPorId(Long id){
-        ninjaRepository.deleteById( id);
+    public void deletarNinjaPorId(Long id) {
+        ninjaRepository.deleteById(id);
     }
 
-    // Atualizar Ninja
-    public NinjaDTO atualizarNinja(Long id, NinjaDTO ninjaDTO){
+    public NinjaDTO atualizarNinja(Long id, NinjaDTO ninjaDTO) {
         Optional<NinjaModel> ninjaExistente = ninjaRepository.findById(id);
-        if (ninjaExistente.isPresent()){
+        if (ninjaExistente.isPresent()) {
             NinjaModel ninjaAtualizado = ninjaMapper.map(ninjaDTO);
             ninjaAtualizado.setId(id);
             NinjaModel ninjaSalvo = ninjaRepository.save(ninjaAtualizado);
@@ -52,6 +47,5 @@ public class NinjaService {
         }
         return null;
     }
-
 
 }
